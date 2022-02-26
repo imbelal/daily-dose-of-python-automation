@@ -16,14 +16,20 @@ variables = {
     "Date": Date
 }
 
-template_document = Document(template_file_path)
 
-for key, value in variables.items():
-    for paragraph in template_document.paragraphs:
-        if key in paragraph.text:
-            inline = paragraph.runs
-            for item in inline:
-                if key in item.text:
-                    item.text = item.text.replace(key, value)
+def main():
+    template_document = Document(template_file_path)
 
-template_document.save(output_file_path)
+    for key, value in variables.items():
+        for paragraph in template_document.paragraphs:
+            if key in paragraph.text:
+                inline = paragraph.runs
+                for item in inline:
+                    if key in item.text:
+                        item.text = item.text.replace(key, value)
+
+    template_document.save(output_file_path)
+
+
+if __name__ == '__main__':
+    main()
