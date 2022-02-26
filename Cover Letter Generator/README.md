@@ -9,7 +9,7 @@
 ``` pip install python-docx ```
 
 ### Finally run below command to start the project 
-``` python coverLetterGenerator.py ```
+``` python cover-letter-generator.py ```
 
 
 ## Contributions are always welcome!!
